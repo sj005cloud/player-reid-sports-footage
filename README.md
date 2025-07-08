@@ -4,12 +4,12 @@ This project performs player detection, tracking, and re-identification in a sin
 Project Structure:
 player_reid_project/
 ├── reid_tracker.py            # Main tracking script
-├── yolo11s.pt                 #YOLOv11 model weights
+├── yolo11s.pt                 # YOLOv11 model weights
 ├── videos/
-│   └── 15sec_input_720p.mp4   #Input video
+│   └── 15sec_input_720p.mp4   # Input video
 ├── output/
-│   └── output_with_ids.mp4    #Output video with tracked IDs
-└── README.md 
+│   └── output_with_ids.mp4    # Output video with tracked IDs
+└── README.md
 
 yolo11s.pt is automatically downloaded if missing.
 Input .mp4 video must be placed inside the videos/ folder.
