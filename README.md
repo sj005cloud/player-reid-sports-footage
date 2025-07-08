@@ -1,69 +1,94 @@
-Player Re-Identification in Sports Footage: 
-This project performs player detection, tracking, and re-identification in a single broadcast video using YOLOv11 and Deep SORT. It includes enhancements like goalkeeper highlighting, player count overlay, and a mini-map showing player positions.
+Final README.md (Polished for GitHub)
+markdown
+Copy
+Edit
+# Player Re-Identification in Sports Footage
 
-Project Structure:
+This project performs player detection, tracking, and re-identification in a single broadcast video using **YOLOv11** and **Deep SORT**.  
+It includes enhancements like **goalkeeper highlighting**, **player count overlay**, and a **mini-map** showing player positions.
+
+---
+
+## Project Structure
+
 player_reid_project/
-├── reid_tracker.py            # Main tracking script
-├── yolo11s.pt                 # YOLOv11 model weights
+├── reid_tracker.py # Main tracking script
+├── yolo11s.pt # YOLOv11 model weights
 ├── videos/
-│   └── 15sec_input_720p.mp4   # Input video
+│ └── 15sec_input_720p.mp4 # Input video
 ├── output/
-│   └── output_with_ids.mp4    # Output video with tracked IDs
+│ └── output_with_ids.mp4 # Output video with tracked IDs
 └── README.md
 
-yolo11s.pt is automatically downloaded if missing.
-Input .mp4 video must be placed inside the videos/ folder.
+yaml
+Copy
+Edit
 
-1. Setup Instructions:
+>  `yolo11s.pt` is automatically downloaded if missing.  
+>  Input `.mp4` video must be placed inside the `videos/` folder.
 
- Step 1: Open project folder
-         Ensure your folder is set up as shown above. You can place the project inside OneDrive/Desktop or any local directory.
+---
 
-         Open your command prompt or terminal, navigate to the project folder:
-         cd "C:\Users\saraj\OneDrive\Desktop\player_reid_project"
+##  Setup Instructions
 
- Step 2: Use a virtual environment setup (highly recommended) and install dependencies
- 
-         # Create virtual environment (once)
-         python -m venv venv
-         # activate it
-         venv\Scripts\activate
-         # Then install dependencies
-         pip install -r requirements.txt
+### Step 1: Open project folder
 
-         If requirements.txt is not available, install packages manually:
+Ensure your folder is structured as shown above.  
+Open your command prompt or terminal and navigate to the project folder:
 
-         Inside the virtual environment of the project folder in command prompt:
-         Copy code
-         pip install ultralytics==8.0.20
-         pip install deep_sort_realtime
-         pip install opencv-python
-         pip install numpy
+```bash
+cd "C:\Users\saraj\OneDrive\Desktop\player_reid_project"
+Step 2: Create virtual environment and install dependencies (Recommended)
+bash
+Copy
+Edit
+# Create virtual environment (once)
+python -m venv venv
 
- Step 3: Run the project
-         In the command prompt, run the main script to begin tracking:
-         python reid_tracker.py
+# Activate virtual environment
+venv\Scripts\activate
 
-         The output will be saved at:
-         output/output_with_ids.mp4
+# Install dependencies
+pip install -r requirements.txt
+If requirements.txt is not available, install manually:
 
-         The processed video ouput is available at the following link: https://drive.google.com/file/d/1zzPVAhVy7-cfqiU__8NwRQRoW5U8HZTO/view?usp=sharing
+bash
+Copy
+Edit
+pip install ultralytics==8.0.20
+pip install deep_sort_realtime
+pip install opencv-python
+pip install numpy
+Step 3: Run the project
+bash
+Copy
+Edit
+python reid_tracker.py
+The output will be saved at:
 
-2. Dependencies and Environment Requirements:
+bash
+Copy
+Edit
+output/output_with_ids.mp4
+▶ Watch the output video here:
+Google Drive Link
 
- Python Version: Python 3.8 or higher
- Required Packages:
- Package              | Purpose                      |
-                      |                              |
- ultralytics==8.0.20  | YOLOv11 object detection     |
- deep_sort_realtime   | Tracking & re-identification |
- opencv-python        | Video and image processing   |
- numpy                | Matrix & numerical ops       |
+ Dependencies and Environment
+Python Version: 3.8 or higher
 
+Required Packages:
 
-3. Notes:
+Package	Purpose
+ultralytics==8.0.20	YOLOv11 object detection
+deep_sort_realtime	Tracking & re-identification
+opencv-python	Video and image processing
+numpy	Matrix & numerical computations
 
- The goalkeeper is manually highlighted by setting their ID inside the script: GOALKEEPER_ID = 79
+ Notes
+Goalkeeper Highlighting:
+Manually controlled using the constant GOALKEEPER_ID = 79 in the script.
 
- The mini-map is displayed at the bottom-right and scales with player movement.
- The script works offline after downloading the model and video.
+Mini-map Overlay:
+Displays at the bottom-right corner and updates player positions in real time.
+
+The script works fully offline after downloading the model and video once.
